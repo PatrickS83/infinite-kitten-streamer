@@ -1,5 +1,5 @@
 import UI from './UI.js';
-import { delay } from './helpers.js';
+import { pause } from './helpers.js';
 import flickrTagSearch from './fetchFuncs.js';
 
 class URLGenerator {
@@ -13,7 +13,7 @@ class URLGenerator {
     while (true) {
       const pageData = await flickrTagSearch(this.theme, this.pageIndex);
       for (const url of pageData) {
-        await delay(2);
+        await pause(2);
         yield url;
       }
       this.pageIndex += 1;
