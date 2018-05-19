@@ -3,12 +3,6 @@ class UI {
     this.elements = {
       cardContainer: document.querySelector('.cardContainer')
     };
-    this.init();
-  }
-
-  init() {
-    const initialCard = this.createCard();
-    this.appendCard(initialCard);
   }
 
   createCard() {
@@ -24,7 +18,10 @@ class UI {
               <p>Enter your theme in the input field!</p>
           </div>
           <div class="card-action">
-              <input type="text"></input>
+              <div class="input-field col s12">
+                <input id="themeInput" type="text">
+                <label for="themeInput">Enter Theme</label>
+              </div>
               <button class="waves-effect waves-light btn">Start Picture Stream!</a>
           </div>
       </div>
@@ -35,6 +32,11 @@ class UI {
 
   appendCard(content, node = this.elements.cardContainer) {
     node.appendChild(content);
+  }
+
+  changeImg(url) {
+    const cardImage = document.querySelector('.card-image img');
+    cardImage.src = url;
   }
 }
 
