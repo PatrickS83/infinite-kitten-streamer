@@ -11,7 +11,7 @@ class UI {
     <div class="col s4">
       <div class="card">
         <div class="card-image">
-            <img class=${theme} src="https://materializecss.com/images/sample-1.jpg">
+            <img class=${theme} src="../static/img/spinner.svg">
             <span class="card-title">${theme} Stream</span>
         </div>
         <div class="card-content">

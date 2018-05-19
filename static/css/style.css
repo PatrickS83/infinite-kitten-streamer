@@ -6,3 +6,8 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.mainHeading {
+    margin-bottom: 0;
+}
+
