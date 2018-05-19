@@ -3,7 +3,7 @@ import { pause } from './helpers.js';
 import flickrTagSearch from './fetchFuncs.js';
 
 class URLGenerator {
-  constructor(theme = 'kitten') {
+  constructor(theme = 'kittens') {
     this.theme = theme;
     this.pageIndex = 1;
     this.ui = new UI();

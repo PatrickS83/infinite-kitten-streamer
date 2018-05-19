@@ -1,4 +1,4 @@
-export default function flickrTagSearch(tag = 'cats', page = '1') {
+export default function flickrTagSearch(tag = 'kittens', page = '1') {
   const apiKey = 'b1a90a68a42acb335863b1fa18f0329e';
   return fetch('https://api.flickr.com/services/rest/' +
       '?method=flickr.photos.search' +
