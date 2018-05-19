@@ -16,13 +16,13 @@ class App {
     const input = document.querySelector('#themeInput');
     button.addEventListener('click', () => {
       if (!input.value) return;
-      this.createURLGenerator(input.value);
+      this.createNewStream(input.value);
       input.value = '';
       input.focus();
     });
   }
 
-  async createURLGenerator(theme = 'kittens') {
+  async createNewStream(theme = 'kittens') {
     const displayCard = this.ui.createCard(theme);
     this.ui.appendCard(displayCard);
     const urlGenerator = new URLGenerator(theme);
