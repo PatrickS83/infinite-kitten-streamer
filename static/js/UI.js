@@ -5,28 +5,20 @@ class UI {
     };
   }
 
-  createCard() {
+  createCard(theme = 'kittens') {
     const card = document.createElement('div');
     card.innerHTML = `
     <div class="col s4">
       <div class="card">
-          <div class="card-image">
-              <img src="https://materializecss.com/images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
-          </div>
-          <div class="card-content">
-              <p>Enter your theme in the input field!</p>
-          </div>
-          <div class="card-action">
-              <div class="input-field col s12">
-                <input id="themeInput" type="text">
-                <label for="themeInput">Enter Theme</label>
-              </div>
-              <button class="waves-effect waves-light btn">Start Picture Stream!</a>
-          </div>
+        <div class="card-image">
+            <img class=${theme} src="https://materializecss.com/images/sample-1.jpg">
+            <span class="card-title">${theme} Stream</span>
+        </div>
+        <div class="card-content">
+            <p>Now Streaming: ${theme}!</p>
+        </div>
       </div>
-    </div>
-    `;
+    </div>`;
     return card;
   }
 
@@ -34,8 +26,8 @@ class UI {
     node.appendChild(content);
   }
 
-  changeImg(url) {
-    const cardImage = document.querySelector('.card-image img');
+  changeImg(url, theme) {
+    const cardImage = document.querySelector(`.${theme}`);
     cardImage.src = url;
   }
 }
