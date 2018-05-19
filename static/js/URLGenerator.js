@@ -2,7 +2,7 @@ import UI from './UI.js';
 import { delay } from './helpers.js';
 import flickrTagSearch from './fetchFuncs.js';
 
-class Card {
+class URLGenerator {
   constructor(theme = 'kitten') {
     this.theme = theme;
     this.pageIndex = 1;
@@ -10,16 +10,15 @@ class Card {
   }
 
   async * [Symbol.asyncIterator]() {
-    let pageIndex = 1;
     while (true) {
-      const pageData = await flickrTagSearch(this.theme, pageIndex);
+      const pageData = await flickrTagSearch(this.theme, this.pageIndex);
       for (const url of pageData) {
         await delay(2);
         yield url;
       }
-      pageIndex += 1;
+      this.pageIndex += 1;
     }
   }
 }
 
-export default Card;
+export default URLGenerator;

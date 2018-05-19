@@ -1,5 +1,5 @@
 import UI from './UI.js';
-import Card from './Card.js';
+import URLGenerator from './URLGenerator.js';
 
 class App {
   constructor() {
@@ -15,17 +15,18 @@ class App {
     const button = document.querySelector('#startButton');
     const input = document.querySelector('#themeInput');
     button.addEventListener('click', () => {
-      this.generate(input.value);
+      if (!input.value) return;
+      this.createURLGenerator(input.value);
       input.value = '';
       input.focus();
     });
   }
 
-  async generate(theme = 'kittens') {
+  async createURLGenerator(theme = 'kittens') {
     const displayCard = this.ui.createCard(theme);
     this.ui.appendCard(displayCard);
-    const card = new Card(theme);
-    for await (const url of card) {
+    const urlGenerator = new URLGenerator(theme);
+    for await (const url of urlGenerator) {
       this.ui.changeImg(url, theme);
     }
   }
