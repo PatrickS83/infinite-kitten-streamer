@@ -4,6 +4,7 @@ import URLGenerator from './URLGenerator.js';
 class App {
   constructor() {
     this.ui = new UI();
+    this.currentStreaming = [];
     this.init();
   }
 
@@ -22,12 +23,23 @@ class App {
     });
   }
 
+  checkDuplicates(theme) {
+    return this.currentStreaming.filter(item => item.toLowerCase().startsWith(theme.toLowerCase()))
+      .length;
+  }
+
   async createNewStream(theme = 'kittens') {
-    const displayCard = this.ui.createCard(theme);
+    const duplicates = this.checkDuplicates(theme);
+    let duplicatedTheme = theme;
+    if (duplicates) duplicatedTheme += duplicates + 1;
+    this.currentStreaming.push(duplicatedTheme);
+
+    const displayCard = this.ui.createCard(duplicatedTheme);
     this.ui.appendCard(displayCard);
+
     const urlGenerator = new URLGenerator(theme);
     for await (const url of urlGenerator) {
-      this.ui.changeImg(url, theme);
+      this.ui.changeImg(url, duplicatedTheme);
     }
   }
 }
