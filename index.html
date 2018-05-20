@@ -4,45 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <title>Infinite Kitten Streamer</title>
 </head>
-<body class="cyan lighten-5">
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-wrapper blue">
-            <a href="#" class="brand-logo">Infinite Kitten Streamer</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="https://www.github.com/PatrickS83">Github</a></li>
-            </ul>
-        </div>
-    </nav>
+<body class="grey lighten-3">
+
 
     <!-- Begin Main content -->
-    <main class="container">
-        <div class="center">
-            <h3 class="mainHeading">Infinite Kitten* Streamer</h3>
+    <main class="">
+        <div class="center main__header">
+            <!-- Navigation Bar -->
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center">Infinite Kitten Streamer</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="https://github.com/PatrickS83/infinite-kitten-streamer">Github</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h3 class="mainHeading">Stream infinite kitten* pics</h3>
             <span class"subHeading">*or anything else if you don't like kittens**</span>
             <br/>
             <span class"subHeading">**but who doesn't?</span>
-        </div>
-        <div class="row center">
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="themeInput" type="text" value="kitten">
-                    <label for="themeInput">Theme or Topic</label>
+            <div class="row center">
+                <div class="col s12">
+                    <div class="input-field inline">
+                        <input id="themeInput" type="text" value="kitten">
+                        <label for="themeInput">Theme or Topic</label>
+                    </div>
+                    <button id="startButton" class="waves-effect waves-light btn teal darken-2">Start Picture Stream!</button>
                 </div>
-                <button id="startButton" class="waves-effect waves-light btn blue">Start Picture Stream!</button>
             </div>
-        <div class="row cardContainer">
+        </div>
+        <!-- Container for dynamically created streaming cards -->
+        <div class="row container cardContainer">
 
         </div>
     </main>
 
 
     <!-- Begin Footer -->
-    <footer class="page-footer blue">
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">About</h5>
+                <p class="grey-text text-lighten-4">A small app to experiment with async iterators/generators <br/>
+                Warning: Only works in recent browser releases!</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Learn more</h5>
+                <ul>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/PatrickS83/infinite-kitten-streamer">Github Repository</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/tc39/proposal-async-iteration">TC39 Proposal</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
         <div class="footer-copyright">
             <div class="container">
                 © 2018 Patrick Schülke
@@ -50,6 +69,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script type="module" src="./static/js/app.js"></script>

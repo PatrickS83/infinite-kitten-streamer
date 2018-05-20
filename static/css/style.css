@@ -2,12 +2,30 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
 }
 main {
     flex: 1 0 auto;
+
 }
 
 .mainHeading {
     margin-bottom: 0;
 }
 
+.main__header {
+    background: linear-gradient(to bottom, rgba(50, 52, 62, 0.85) 0%, rgba(65, 55, 63, 0.95) 100%);
+    color: white
+}
+
+nav {
+    background-color: inherit
+}
+
+input {
+    color: white
+}
+
+footer {
+    background: linear-gradient(to bottom, rgba(50, 52, 62, 0.85) 0%, rgba(65, 55, 63, 0.95) 100%);
+}
