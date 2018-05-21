@@ -23,7 +23,7 @@ class App {
   }
 
   // checks if a Stream with the current theme is already running
-  // (String) --> Boolean
+  // (String) --> Number
   checkDuplicates(theme) {
     return this.currentStreaming.filter(item => item.toLowerCase().startsWith(theme.toLowerCase()))
       .length;
