@@ -3,7 +3,7 @@ class UI {
     this.elements = {
       cardContainer: document.querySelector('.cardContainer'),
       streamButton: document.querySelector('#startButton'),
-      streamInput: document.querySelector('#themeInput'),
+      streamInput: document.querySelector('#themeInput')
     };
   }
 
@@ -18,6 +18,7 @@ class UI {
         </div>
         <div class="card-content">
             <p>Now Streaming: ${theme}!</p>
+            <p>Images Streamed: <span data-imgCount=${theme}>0</span></p>
         </div>
       </div>
     </div>`;
@@ -31,6 +32,11 @@ class UI {
   changeImg(url, theme) {
     const cardImage = document.querySelector(`.${theme}`);
     cardImage.src = url;
+  }
+
+  renderImgCount(count, theme) {
+    const imgCounter = document.querySelector(`[data-imgCount=${theme}]`);
+    imgCounter.innerHTML = count;
   }
 }
 
