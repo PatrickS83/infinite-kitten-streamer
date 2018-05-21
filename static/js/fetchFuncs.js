@@ -1,4 +1,6 @@
-export default function flickrTagSearch(tag = 'kittens', page = '1') {
+// fetches from Flickr API and returns an array of URLS
+// (String, String) ---> Array(Strings)
+function flickrTagSearch(tag = 'kittens', page = '1') {
   const apiKey = 'b1a90a68a42acb335863b1fa18f0329e';
   return fetch('https://api.flickr.com/services/rest/' +
       '?method=flickr.photos.search' +
@@ -13,3 +15,5 @@ export default function flickrTagSearch(tag = 'kittens', page = '1') {
           `https://farm${photo.farm}.staticflickr.com/` +
           `${photo.server}/${photo.id}_${photo.secret}_q.jpg`));
 }
+
+export default flickrTagSearch;
