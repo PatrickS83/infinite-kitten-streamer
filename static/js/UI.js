@@ -1,7 +1,9 @@
 class UI {
   constructor() {
     this.elements = {
-      cardContainer: document.querySelector('.cardContainer')
+      cardContainer: document.querySelector('.cardContainer'),
+      streamButton: document.querySelector('#startButton'),
+      streamInput: document.querySelector('#themeInput'),
     };
   }
 

@@ -13,13 +13,12 @@ class App {
   }
 
   addButtonListener() {
-    const button = document.querySelector('#startButton');
-    const input = document.querySelector('#themeInput');
-    button.addEventListener('click', () => {
-      if (!input.value) return;
-      this.createNewStream(input.value);
-      input.value = '';
-      input.focus();
+    const { streamInput, streamButton } = this.ui.elements;
+    streamButton.addEventListener('click', () => {
+      if (!streamInput.value) return;
+      this.createNewStream(streamInput.value);
+      streamInput.value = '';
+      streamInput.focus();
     });
   }
 
