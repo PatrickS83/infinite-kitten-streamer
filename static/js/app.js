@@ -39,8 +39,9 @@ class App {
     this.ui.appendCard(displayCard);
 
     const urlGenerator = new URLGenerator(theme);
-    for await (const url of urlGenerator) {
-      this.ui.changeImg(url, duplicatedTheme);
+    for await (const stream of urlGenerator) {
+      this.ui.changeImg(stream.url, duplicatedTheme);
+      this.ui.renderImgCount(stream.imgCount, duplicatedTheme);
     }
   }
 }
