@@ -13,7 +13,7 @@ class UI {
     <div class="col s4">
       <div class="card">
         <div class="card-image">
-            <img class=${theme} src="/static/img/spinner.svg">
+            <img class=${theme} src="https://patricks83.github.io/infinite-kitten-streamer/static/img/spinner.svg">
             <span class="card-title">${theme} Stream</span>
         </div>
         <div class="card-content">
